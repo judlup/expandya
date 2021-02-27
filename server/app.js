@@ -52,18 +52,21 @@ app.get("/", function (req, res) {
   res.send(`Server running on ${hostname}:${port}`);
 });
 
+// http://localhost:3035/products/
 app.get("/products", function (req, res) {
   res.send(products);
 });
 
+//http://localhost:3035/products/search?q=oil
 app.get("/products/search", function (req, res) {
   const params = req.query;
   const key = params.q;
   const output = _.filter(products, function (myObject) {
     return (
-      myObject.name.toLowerCase().indexOf(key.toLowerCase()) != -1 ||
-      myObject.about.toLowerCase().indexOf(key.toLowerCase()) != -1 ||
-      myObject.tags.indexOf(key.toLowerCase()) != -1
+      (myObject.name.toLowerCase().indexOf(key.toLowerCase()) != -1 ||
+        myObject.about.toLowerCase().indexOf(key.toLowerCase()) != -1 ||
+        myObject.tags.indexOf(key.toLowerCase()) != -1) &&
+      myObject.isActive == "true"
     );
   });
   res.send(output);

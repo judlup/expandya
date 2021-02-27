@@ -14,20 +14,40 @@ header.menu div.menu-container nav i { color: white; font-size: 30px; line-heigh
 
 header.menu div.menu-container nav i.search { position: absolute; right: 10px; top: 0; }
 
-header.menu div.menu-container nav a.nav-item { font-family: Helvetica, Arial, Sans-Serif; font-size: 17px; line-height: 70px; text-transform: uppercase; text-decoration: none; white-space: nowrap; border-bottom: 1px solid transparent; color: #FFF; margin-right: 20px; }
+header.menu div.menu-container nav a.nav-item { font-family: Helvetica, Arial, Sans-Serif; font-size: 17px; line-height: 70px; text-transform: uppercase; text-decoration: none; white-space: nowrap; border-bottom: 1px solid transparent; color: #fff; margin-right: 20px; }
 
-header.menu div.search-container { position: absolute; background-color: white; z-index: 20; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 100%; padding: 5px; background-color: white; border-bottom: 1px solid #CCC; display: none; }
+header.menu div.search-container { position: absolute; background-color: white; z-index: 20; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 100%; padding: 5px; background-color: white; border-bottom: 1px solid #ccc; display: none; }
 
 header.menu div.search-container.showing { display: block; }
 
-header.menu div.search-container input[type='text'] { min-width: 100%; font-size: 36px; line-height: 50px; border: 1px solid #CCC; padding: 0 10px; }
+header.menu div.search-container input[type="text"] { min-width: 100%; font-size: 36px; line-height: 50px; border: 1px solid #f7f6f6; padding: 0 10px; border-radius: 7px; height: 45px; }
 
-header.menu div.search-container i.close { position: absolute; right: 10px; top: 5px; font-size: 36px; line-height: 50px; }
+header.menu div.search-container i.close { position: absolute; right: 10px; top: 5px; font-size: 36px; line-height: 50px; color: dimgray; }
 
 /** This is the central home page */
 section#home { position: absolute; width: 100%; height: 100%; top: 0; left: 0; padding: 100px 20px 0; background-image: url("/img/header.jpg"); background-size: cover; background-repeat: no-repeat; }
 
-section#home div.content { max-width: 1280px; margin: 0 auto; color: #FFF; }
+section#home div.content { max-width: 1280px; margin: 0 auto; color: #fff; }
+
+header.product-container { background-color: #eee; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; max-width: 100vw; overflow-x: auto; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+.loading { padding: 20px; background-color: #000; border-radius: 7px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-weight: bold; color: #fff; font-size: 1.2em; }
+
+header.product { -webkit-box-shadow: 0px -1px 11px 1px #d9d5d9; box-shadow: 0px -1px 11px 1px #d9d5d9; background-color: #fff; width: 350px; padding: 20px; border: 1px solid #eee; border-radius: 7px; margin: 10px 10px 10px 10px; }
+
+header.product div.image-container { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #f7f6f6; padding: 15px; border-radius: 7px; }
+
+header.product div.image-container img { width: 150px; height: 150px; }
+
+header.product div.name-container span.name { display: block; margin: 15px 10px 45px 0; font-size: 1.2em; font-weight: bold; color: #555454; height: 2.2em; }
+
+header.product div.name-container a { margin-top: 10px; margin-bottom: 10px; font-size: 1.2em; color: darkgrey; }
+
+header.product div.name-container a:hover { color: lightslategray; }
+
+header.product div.name-container div.tags-container { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
+
+header.product div.name-container div.tags-container span.tag { margin: 15px 5px 0 0; font-size: 0.8em; padding: 7px; background-color: #f7f6f6; color: darkgrey; border-radius: 7px; }
 
 html, html * { -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0; margin: 0; }
 
@@ -37,7 +57,7 @@ main { width: 100%; height: 100%; display: block; position: relative; }
 
 main * { -webkit-font-smoothing: antialiased; }
 
-main a { -webkit-transition: opacity .5s; transition: opacity .5s; }
+main a { -webkit-transition: opacity 0.5s; transition: opacity 0.5s; }
 
 main a:hover { opacity: 0.7; }
 
