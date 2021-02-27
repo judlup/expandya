@@ -8,17 +8,20 @@
     "url": ""
   },
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-sass": "^5.0.0",
+    "underscore": "^1.12.0"
   },
   "scripts": {
     "servers": "SET NODE_ENV=development & gulp watch",
-    "dev-server": "SET NODE_ENV=development & gulp dev_server",
+    "dev-server": "SET NODE_ENV=development gulp dev_server",
     "node-server": "SET NODE_ENV=development & nodemon server/app.js",
-    "prod": "SET NODE_ENV=production & gulp prod",
-    "dev-tests": "SET NODE_ENV=development & gulp tests",
-    "image-min": "SET NODE_ENV=development & gulp images",
-    "sass": "SET NODE_ENV=development & gulp sass",
-    "third-party": "SET NODE_ENV=development & gulp vendor"
+    "prod": "NODE_ENV=production gulp prod",
+    "dev-tests": "NODE_ENV=development gulp tests",
+    "image-min": "NODE_ENV=development gulp images",
+    "sass": "NODE_ENV=development gulp sass",
+    "third-party": "NODE_ENV=development gulp vendor"
   },
   "keywords": [
     "Web",
@@ -29,7 +32,7 @@
   "author": "Shaun Hinchy",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.3.4",
+    "@babel/core": "^7.13.8",
     "@babel/preset-env": "7.0.0-beta.34",
     "@babel/preset-react": "^7.0.0-beta.36",
     "babel-loader": "8.0.0-beta.0",

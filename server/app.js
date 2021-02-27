@@ -1,6 +1,6 @@
 /**
  * The Server Can be configured and created here...
- * 
+ *
  * You can find the JSON Data file here in the Data module. Feel free to impliment a framework if needed.
  */
 
@@ -19,26 +19,59 @@
     ]
 }
 */
-const data      = require('./data');
-const http      = require('http');
-const hostname  = 'localhost';
-const port      = 3035;
+// Libs
+const express = require("express");
+const bodyParser = require("body-parser");
+var _ = require("underscore");
+var cors = require("cors");
 
-/** 
+// Vars
+const app = express();
+const data = require("./data");
+const http = require("http");
+const url = require("url");
+const hostname = "localhost";
+const port = 3035;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+
+/**
  * Start the Node Server Here...
- * 
- * The http.createServer() method creates a new server that listens at the specified port.  
- * The requestListener function (function (req, res)) is executed each time the server gets a request. 
+ *
+ * The http.createServer() method creates a new server that listens at the specified port.
+ * The requestListener function (function (req, res)) is executed each time the server gets a request.
  * The Request object 'req' represents the request to the server.
  * The ServerResponse object 'res' represents the writable stream back to the client.
  */
-http.createServer(function (req, res) {
-    // .. Here you can create your data response in a JSON format
-    
-    
-    res.write("Response goes in here..."); // Write out the default response
-    res.end(); //end the response
-}).listen( port );
 
+const products = JSON.parse(JSON.stringify(data));
 
-console.log(`[Server running on ${hostname}:${port}]`);
+app.get("/", function (req, res) {
+  res.send(`Server running on ${hostname}:${port}`);
+});
+
+app.get("/products", function (req, res) {
+  res.send(products);
+});
+
+app.get("/products/search", function (req, res) {
+  const params = req.query;
+  const key = params.q;
+  const output = _.filter(products, function (myObject) {
+    return (
+      myObject.name.toLowerCase().indexOf(key.toLowerCase()) != -1 ||
+      myObject.about.toLowerCase().indexOf(key.toLowerCase()) != -1 ||
+      myObject.tags.indexOf(key.toLowerCase()) != -1
+    );
+  });
+  res.send(output);
+});
+
+app.listen(port, function (err) {
+  console.log(`[Server running on ${hostname}:${port}]`);
+  if (err) {
+    console.log(err);
+  }
+});
