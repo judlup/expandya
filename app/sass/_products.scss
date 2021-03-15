@@ -1,23 +1,21 @@
 header.product-container {
-  background-color: #eee;
+  background-color: $color-bg;
   display: flex;
   flex-direction: row;
   max-width: 100vw;
   overflow-x: auto;
-  // width: 80%;
   display: flex;
   justify-content: space-between;
-  // margin-left: 10%;
 }
 
 .loading {
   padding: 20px;
-  background-color: #000;
+  background-color: $color-dark;
   border-radius: 7px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  color: #fff;
+  color: $color-light;
   font-size: 1.2em;
 }

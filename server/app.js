@@ -69,7 +69,11 @@ app.get("/products/search", function (req, res) {
       myObject.isActive == "true"
     );
   });
-  res.send(output);
+  if (output.length >= 4) {
+    res.send([output[0], output[1], output[2], output[3]]);
+  } else {
+    res.send(output);
+  }
 });
 
 app.listen(port, function (err) {

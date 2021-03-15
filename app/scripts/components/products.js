@@ -25,7 +25,11 @@ const Products = ({ value }) => {
   return (
     <div>
       {error !== null ? <ShowError /> : null}
-      {isLoaded == false ? <Loading /> : <List values={products} />}
+      {(isLoaded == false) & (value.length > 0) ? (
+        <Loading />
+      ) : (
+        <List values={products} />
+      )}
     </div>
   );
 };

@@ -7,13 +7,8 @@ const Product = ({ _id, picture, name, tags }) => (
     </div>
     <div className="name-container">
       <span className="name">{name}</span>
-      <a href="#">Read More</a>
       <div className="tags-container">
-        {tags.map((tag, i) => (
-          <span className="tag" key={i}>
-            {tag}
-          </span>
-        ))}
+        <span className="tag">{tags.toString()}</span>
       </div>
     </div>
   </header>

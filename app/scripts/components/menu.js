@@ -85,14 +85,12 @@ class Menu extends React.Component {
           className={
             (this.state.showingSearch ? "showing " : "") + "search-container"
           }
-          style={{
-            backgroundColor: "#eee",
-            width: "60%",
-            position: "relative",
-            left: "20%",
-          }}
         >
-          <input type="text" onChange={(e) => this.onSearch(e)} />
+          <input
+            type="text"
+            placeholder="Search"
+            onChange={(e) => this.onSearch(e)}
+          />
           <a href="#" onClick={(e) => this.showSearchContainer(e)}>
             <i className="material-icons close">close</i>
           </a>

@@ -2,12 +2,9 @@
 * This is the main stylesheet for the sass compiler, all imports should stem from this initial page.
 * It contains the universal styles of the site, the imports and various other items.
 */
-// Colours and settings
-$siteWidth: 1280px;
-$lightgray: rgb(247, 246, 246);
-$grayd: #555454;
 
 // Imports
+@import "_variables.scss";
 @import "_menu.scss";
 @import "_home.scss";
 @import "_products.scss";
@@ -55,6 +52,6 @@ main {
   div.inner {
     width: 100%;
     height: auto;
-    background-color: rgb(150, 0, 0);
+    background-color: $color-general-full-containers;
   }
 }

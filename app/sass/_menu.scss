@@ -3,9 +3,6 @@
  *
  */
 
-$lineHeightForNav: 70px;
-$lineHeightForSearch: 50px;
-
 header.menu {
   // ...
   width: 100%;
@@ -14,7 +11,7 @@ header.menu {
 
   div.menu-container {
     width: 100%;
-    background-color: black;
+    background-color: $color-dark;
     padding: 0 20px;
     text-align: left;
 
@@ -26,10 +23,10 @@ header.menu {
     }
 
     h1 {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: $font;
       font-size: 24px;
-      line-height: $lineHeightForNav;
-      color: white;
+      line-height: 70px;
+      color: $color-light;
       text-align: left;
       display: inline-block;
     }
@@ -38,25 +35,26 @@ header.menu {
       margin-left: 60px;
 
       i {
-        color: white;
+        color: color-light;
         font-size: 30px;
-        line-height: $lineHeightForNav;
+        line-height: 70px;
       }
       i.search {
         position: absolute;
+        color: $color-light;
         right: 10px;
         top: 0;
       }
 
       a.nav-item {
-        font-family: Helvetica, Arial, Sans-Serif;
+        font-family: $font;
         font-size: 17px;
-        line-height: $lineHeightForNav;
+        line-height: 70px;
         text-transform: uppercase;
         text-decoration: none;
         white-space: nowrap;
         border-bottom: 1px solid transparent;
-        color: #fff;
+        color: $color-light;
         margin-right: 20px;
       }
     }
@@ -64,13 +62,13 @@ header.menu {
 
   div.search-container {
     position: absolute;
-    background-color: white;
+    background-color: $color-light;
     z-index: 20;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     padding: 5px;
-    background-color: white;
-    border-bottom: 1px solid #ccc;
+    background-color: $color-light;
+    border-bottom: 1px solid $color-gray-light;
     display: none;
     &.showing {
       display: block;
@@ -79,11 +77,10 @@ header.menu {
     input[type="text"] {
       min-width: 100%;
       font-size: 36px;
-      line-height: $lineHeightForSearch;
-      border: 1px solid rgb(247, 246, 246);
+      line-height: 50px;
+      border: 1px solid $color-gray-lighter;
       padding: 0 10px;
       border-radius: 7px;
-      height: 45px;
     }
 
     i.close {
@@ -91,8 +88,8 @@ header.menu {
       right: 10px;
       top: 5px;
       font-size: 36px;
-      line-height: $lineHeightForSearch;
-      color: dimgray;
+      line-height: 50px;
+      color: $color-gray-dark;
     }
   }
 }
